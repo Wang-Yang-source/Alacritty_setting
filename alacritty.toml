@@ -1,0 +1,111 @@
+[terminal.shell]
+args = ['--login']
+program = "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+
+[colors.primary]
+background = "#12121e"
+foreground = "#e0def4"
+
+[colors.cursor]
+text = "#12121e"
+cursor = "#e0def4"
+
+[colors.normal]
+black = "#1e1e2e"
+red = "#ff789e"
+green = "#00ff00"
+yellow = "#f6c177"
+blue = "#3e8fb0"
+magenta = "#c4a7e7"
+cyan = "#ebbcba"
+white = "#e0def4"
+
+[colors.bright]
+black = "#1e1e2e"
+red = "#ff789e"
+green = "#ff00ff"
+yellow = "#f6c177"
+blue = "#3e8fb0"
+magenta = "#c4a7e7"
+cyan = "#ebbcba"
+white = "#e0def4"
+
+[font]
+size = 13.0
+
+[font.bold]
+family = "0xProto Nerd Font Mono"
+style = "Bold"
+
+[font.italic]
+family = "0xProto Nerd Font Mono"
+style = "Italic"
+
+[font.normal]
+family = "0xProto Nerd Font Mono"
+style = "Regular"
+
+[window]
+opacity = 0.8
+padding.x = 25
+padding.y = 30
+decorations = "None"               # 取消系统边栏
+decorations_theme_variant = "Dark"
+dynamic_padding = true
+blur = true
+startup_mode = "Windowed"
+resize_increments = true
+option_as_alt = "Both"
+title = "Administrator: Alacritty"
+dynamic_title = true
+dimensions.columns = 120
+dimensions.lines = 30
+
+[cursor]
+style = { shape = "Block", blinking = "On" }
+blink_interval = 750
+blink_timeout = 5
+unfocused_hollow = true
+thickness = 0.15
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+save_to_clipboard = true
+
+[keyboard]
+bindings = [
+    { key = "V", mods = "Control", action = "Paste" },
+    { key = "C", mods = "Control", action = "Copy" },
+    { key = "Up", mods = "Shift", action = "ScrollLineUp" },
+    { key = "Down", mods = "Shift", action = "ScrollLineDown" },
+    { key = "PageUp", mods = "None", action = "ScrollPageUp" },
+    { key = "PageDown", mods = "None", action = "ScrollPageDown" },
+    { key = "C", mods = "Control", action = "ReceiveChar" },           # Changed from "Cancel" to "ReceiveChar"
+    { key = "Insert", mods = "Shift", action = "PasteSelection" },
+    { key = "Key0", mods = "Control", action = "ResetFontSize" },
+    { key = "Equals", mods = "Control", action = "IncreaseFontSize" },
+    { key = "Minus", mods = "Control", action = "DecreaseFontSize" },
+]
+
+[mouse]
+hide_when_typing = true
+bindings = [
+    { mouse = "Right", mods = "None", action = "Paste" },
+    { mouse = "Middle", mods = "None", action = "PasteSelection" },
+]
+
+[bell]
+animation = "EaseOutSine"
+duration = 300
+color = "#ffffff"
+
+[debug]
+render_timer = false     # 禁用渲染时间日志
+highlight_damage = false
+
+[general]
+live_config_reload = true
