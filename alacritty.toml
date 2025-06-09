@@ -1,65 +1,88 @@
-[terminal.shell]
-args = ['--login']
-program = "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
-
-[colors.primary]
-background = "#12121e"
-foreground = "#e0def4"
-
-[colors.cursor]
-text = "#12121e"
-cursor = "#e0def4"
-
-[colors.normal]
-black = "#1e1e2e"
-red = "#ff789e"
-green = "#00ff00"
-yellow = "#f6c177"
-blue = "#3e8fb0"
-magenta = "#c4a7e7"
-cyan = "#ebbcba"
-white = "#e0def4"
-
-[colors.bright]
-black = "#1e1e2e"
-red = "#ff789e"
-green = "#ff00ff"
-yellow = "#f6c177"
-blue = "#3e8fb0"
-magenta = "#c4a7e7"
-cyan = "#ebbcba"
-white = "#e0def4"
+[window]
+decorations = "Buttonless"  # 窗口装饰
+dimensions = { columns = 80, lines = 30 }
+padding = { x = 20, y = 20 }
+dynamic_padding = false
+startup_mode = "Windowed"  # 若配置为 Windowed 则不会最大化
+opacity = 0.85             # 半透明
+blur = true                # 毛玻璃效果
 
 [font]
-size = 13.0
+normal = { family = "0xProto Nerd Font", style = "Regular" }
+bold = { family = "0xProto Nerd Font", style = "Bold" }
+italic = { family = "0xProto Nerd Font", style = "Italic" }
+bold_italic = { family = "0xProto Nerd Font", style = "Bold Italic" }
+size = 13.5
 
-[font.bold]
-family = "0xProto Nerd Font Mono"
-style = "Bold"
+# [cursor.style] table removed to avoid conflict with [cursor] style key
+# shape = "Block"
+# blinking = "Off"
 
-[font.italic]
-family = "0xProto Nerd Font Mono"
-style = "Italic"
+[colors.primary]
+background = "#24273a"
+foreground = "#cad3f5"
+dim_foreground = "#8087a2"
+bright_foreground = "#cad3f5"
 
-[font.normal]
-family = "0xProto Nerd Font Mono"
-style = "Regular"
+[colors.cursor]
+text = "#24273a"
+cursor = "#f4dbd6"
 
-[window]
-opacity = 0.8
-padding.x = 25
-padding.y = 30
-decorations = "None"               # 取消系统边栏
-decorations_theme_variant = "Dark"
-dynamic_padding = true
-blur = true
-startup_mode = "Windowed"
-resize_increments = true
-option_as_alt = "Both"
-title = "Administrator: Alacritty"
-dynamic_title = true
-dimensions.columns = 120
-dimensions.lines = 30
+[colors.vi_mode_cursor]
+text = "#24273a"
+cursor = "#b7bdf8"
+
+[colors.search.matches]
+foreground = "#24273a"
+background = "#a5adcb"
+
+[colors.search.focused_match]
+foreground = "#24273a"
+background = "#a6da95"
+
+[colors.footer_bar]
+foreground = "#24273a"
+background = "#a5adcb"
+
+[colors.hints.start]
+foreground = "#24273a"
+background = "#eed49f"
+
+[colors.hints.end]
+foreground = "#24273a"
+background = "#a5adcb"
+
+[colors.selection]
+text = "#24273a"
+background = "#f4dbd6"
+
+[colors.normal]
+black = "#494d64"
+red = "#ed8796"
+green = "#a6da95"
+yellow = "#eed49f"
+blue = "#8aadf4"
+magenta = "#f5bde6"
+cyan = "#8bd5ca"
+white = "#b8c0e0"
+
+[colors.bright]
+black = "#5b6078"
+red = "#ed8796"
+green = "#a6da95"
+yellow = "#eed49f"
+blue = "#8aadf4"
+magenta = "#f5bde6"
+cyan = "#8bd5ca"
+white = "#a5adcb"
+
+[[colors.indexed_colors]]
+index = 16
+color = "#f5a97f"
+
+[[colors.indexed_colors]]
+index = 17
+color = "#f4dbd6"
 
 [cursor]
 style = { shape = "Block", blinking = "On" }
@@ -78,18 +101,18 @@ save_to_clipboard = true
 
 [keyboard]
 bindings = [
-    { key = "V", mods = "Control", action = "Paste" },
-    { key = "C", mods = "Control", action = "Copy" },
+    { key = "V", mods = "Control|Shift", action = "Paste" },
+    { key = "C", mods = "Control|Shift", action = "Copy" },
     { key = "Up", mods = "Shift", action = "ScrollLineUp" },
     { key = "Down", mods = "Shift", action = "ScrollLineDown" },
     { key = "PageUp", mods = "None", action = "ScrollPageUp" },
     { key = "PageDown", mods = "None", action = "ScrollPageDown" },
-    { key = "C", mods = "Control", action = "ReceiveChar" },           # Changed from "Cancel" to "ReceiveChar"
     { key = "Insert", mods = "Shift", action = "PasteSelection" },
     { key = "Key0", mods = "Control", action = "ResetFontSize" },
     { key = "Equals", mods = "Control", action = "IncreaseFontSize" },
     { key = "Minus", mods = "Control", action = "DecreaseFontSize" },
 ]
+
 
 [mouse]
 hide_when_typing = true
